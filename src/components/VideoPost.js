@@ -6,7 +6,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 
 
-const VideoPost = ({ post, activePostId }) => {
+const VideoPost = ({ post }) => {
   
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
@@ -14,12 +14,6 @@ const VideoPost = ({ post, activePostId }) => {
   const insets = useSafeAreaInsets();
   const adjustedHeight = height - insets.top - insets.bottom;
   const { height } = useWindowDimensions();
-
-  useEffect(() => {
-    if (post.id === activePostId) {
-      setIsPlaying(true);
-    }
-  }, [activePostId]);
 
   return (
     <View style={[styles.container, { height: height}]}>

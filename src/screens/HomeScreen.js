@@ -40,21 +40,7 @@ const post = [
 
 const HomeScreen = () => {
 
-  const [activePostId, setActivePostId] = useState([post[0].id]);
-
-  // useEffect(() => {
-  //   // fetch videos 
-  //   const fetchVideos = async () => {
-  //     try {
-  //       const response = await axios.get('https://d2c9rtb1ysanaa.cloudfront.net');
-  //       setPosts(response.data);
-  //     } catch (error) {
-  //       console.error('Error fetching videos:', error);
-  //     }
-  //   };
-
-  //   fetchVideos();
-  // }, []);
+  // const [activePostId, setActivePostId] = useState([post[0].id]);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -64,7 +50,7 @@ const HomeScreen = () => {
       <FlatList 
         data={post}
         keyExtractor={(item) => item.id}
-        renderItem={({ item }) => <VideoPost post={item} activePostId={activePostId}/>}
+        renderItem={({ item }) => <VideoPost post={item} />}
         // decelerationRate={'fast'}
         // pagingEnabled={true}
       />
